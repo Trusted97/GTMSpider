@@ -16,7 +16,7 @@ except ImportError:
     print("Installa tutti i moduli per avviarlo")
   
 #query da cercare 
-query = "autonoleggio lungo termine roma"
+query = "search term here"
 
 session = HTMLSession() # Inizializzo HTMLSession
   
