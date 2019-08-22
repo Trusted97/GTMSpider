@@ -28,7 +28,7 @@ def GTMSpider(query):
     #pause : Lapse to wait between HTTP requests. Lapse too short may cause Google to block your IP. Keeping significant lapse will make your program slow but its safe and better option.
     #Return : Generator (iterator) that yields found URLs. If the stop parameter is None the iterator will loop forever.
 
-    for current_url in search(query, lang="en", num=10, start=0, stop=10, pause=15, only_standard=True):
+    for current_url in search(query, tld="com", lang="en", num=10, start=0, stop=10, pause=15, only_standard=True):
 
         try:
             
@@ -41,7 +41,7 @@ def GTMSpider(query):
             check_GTM_ACRONYM = rendered_html.find("GTM-") #Check for see if GTM Acronym is in page
             
 
-            if ( check_GTM_URL > 0 or check_GTM_ACRONYM > 0):
+            if ( check_GTM_URL > 0 or check_GTM_ACRONYM > 0): #If one of the condition is respected GTM is enable
                 print ("Google Tag Manager currently in use! " + current_url)
             else:
                 print ("Google Tag Manager not in use! " + current_url)
